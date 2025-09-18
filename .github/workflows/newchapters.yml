@@ -12,7 +12,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v5
         
-      - name: Say hello
+      - name: Its new
         run: |
           echo "New chapters always means new beginnings!"
           echo "Repository: ${{ github.repository }}"
