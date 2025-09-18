@@ -1,0 +1,31 @@
+name: Build & List Workflow
+
+on: [push]
+
+jobs:
+  build:
+    name: Build Job
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: List repo files
+        run: |
+          echo "Here are the files in the repository:"
+          ls -R
+
+      - name: Run a sample build step
+        run: |
+          echo "Simulating a build..."
+          mkdir build
+          echo "Build complete at $(date)" > build/output.txt
+          cat build/output.txt
+
+      - name: Show environment details
+        run: |
+          echo "Runner OS: ${{ runner.os }}"
+          echo "GitHub Actor: ${{ github.actor }}"
+          echo "Workflow Run ID: ${{ github.run_id }}"
+
