@@ -58,7 +58,7 @@ jobs:
         FLASK_ENV: testing
       run: |
         pytest --tb=short -v --junitxml=test-results.xml
-
+[O
     - name: Upload test results
       uses: actions/upload-artifact@v4
       if: always()  # Upload even if tests fail
